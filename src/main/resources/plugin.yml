@@ -1,0 +1,7 @@
+name: MinecraftMonopoly
+version: '${project.version}'
+main: com.bloemenpot.me.minecraftmonopoly.MinecraftMonopoly
+api-version: 1.16
+authors:
+  - Bloemenpot
+  - Gerampje

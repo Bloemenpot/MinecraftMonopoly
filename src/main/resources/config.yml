@@ -1,0 +1,13 @@
+minimum-players: 2
+countdown-seconds: 30
+lobby-spawn:
+  world: 'world'
+  x: 0.5
+  y: 64
+  z: 0.5
+  yaw: -180
+  pitch: 0
+maps:
+  1:
+    world: 'map1'
+
