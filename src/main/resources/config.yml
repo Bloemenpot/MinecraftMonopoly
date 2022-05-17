@@ -10,4 +10,19 @@ lobby-spawn:
 maps:
   1:
     world: 'map1'
+    x: 100.5
+    y: 64
+    z: 100.5
+    yaw: -180
+    pitch: 0
+  2:
+    world: 'map2'
+    x: 100.5
+    y: 64
+    z: 100.5
+    yaw: -180
+    pitch: 0
 
+
+#MONOPOLY SPECIFIC:
+start-money: 1500

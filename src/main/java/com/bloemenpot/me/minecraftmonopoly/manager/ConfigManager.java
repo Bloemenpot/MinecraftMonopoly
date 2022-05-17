@@ -29,4 +29,9 @@ public class ConfigManager {
         );
     }
 
+
+
+    /* MONOPOLY */
+    public static int getStartMoney() { return config.getInt("start-money"); }
+
 }
