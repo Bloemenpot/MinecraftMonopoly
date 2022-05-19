@@ -70,5 +70,19 @@
             <version>1.16.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>com.sk89q</groupId>
+            <artifactId>worldguard</artifactId>
+            <version>7.0.5</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/worldguard.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.sk89q</groupId>
+            <artifactId>worldedit</artifactId>
+            <version>7.2.5</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/worldedit.jar</systemPath>
+        </dependency>
     </dependencies>
 </project>

@@ -37,6 +37,7 @@ public class Countdown extends BukkitRunnable {
             arena.sendMessage(ChatColor.GREEN + "Game will start in " + countdownSeconds + " second" + (countdownSeconds == 1 ? "" : "s") + ".");
         }
 
+        arena.sendTitle(ChatColor.GREEN.toString() + countdownSeconds + " second" + (countdownSeconds == 1 ? "" : "s") + ".", ChatColor.GRAY + "Until game starts.");
         countdownSeconds--;
     }
 }

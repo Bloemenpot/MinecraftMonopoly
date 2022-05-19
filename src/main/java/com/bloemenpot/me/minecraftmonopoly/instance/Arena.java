@@ -4,6 +4,7 @@ import com.bloemenpot.me.minecraftmonopoly.GameState;
 import com.bloemenpot.me.minecraftmonopoly.MinecraftMonopoly;
 import com.bloemenpot.me.minecraftmonopoly.manager.ConfigManager;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
@@ -48,7 +49,7 @@ public class Arena {
             }
             players.clear();
         }
-
+        sendTitle("", "");
         state = GameState.RECRUITING;
         countdown.cancel();
         countdown = new Countdown(main, this);
@@ -84,6 +85,18 @@ public class Arena {
     public void removePlayer(Player player) {
         players.remove(player.getUniqueId());
         player.teleport(ConfigManager.getLobbySpawn());
+        player.sendTitle("", "");
+
+        if (state == GameState.COUNTDOWN && players.size() < ConfigManager.getMinimumPlayers()) {
+            sendMessage(ChatColor.RED + "Not enough players. Countdown stopped");
+            reset(false);
+            return;
+        }
+
+        if (state == GameState.LIVE && players.size() < ConfigManager.getMinimumPlayers()) {
+            sendMessage(ChatColor.RED + "The game has ended since too many players left");
+            reset(false);
+        }
     }
 
 
@@ -93,6 +106,7 @@ public class Arena {
 
     public GameState getState() { return state; }
     public List<UUID> getPlayers() { return players; }
+    public Game getGame() { return game; }
 
     public void setState(GameState state) { this.state = state; }
 

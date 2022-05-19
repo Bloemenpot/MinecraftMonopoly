@@ -1,5 +1,6 @@
 package com.bloemenpot.me.minecraftmonopoly;
 
+import com.bloemenpot.me.minecraftmonopoly.command.ArenaCommand;
 import com.bloemenpot.me.minecraftmonopoly.listener.ConnectListener;
 import com.bloemenpot.me.minecraftmonopoly.listener.GameListener;
 import com.bloemenpot.me.minecraftmonopoly.manager.ConfigManager;
@@ -18,6 +19,7 @@ public final class MinecraftMonopoly extends JavaPlugin {
 
         Bukkit.getPluginManager().registerEvents(new ConnectListener(this), this);
         Bukkit.getPluginManager().registerEvents(new GameListener(this), this);
+        getCommand("arena").setExecutor(new ArenaCommand(this));
     }
 
     public MapManager getMapManager() { return mapManager; }
